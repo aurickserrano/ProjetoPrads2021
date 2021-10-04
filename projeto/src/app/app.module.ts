@@ -7,8 +7,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './pages/home/home.component';
-import { AuthService } from './pages/login/auth.service';
 import { FormsModule } from '@angular/forms';
+import{HttpClientModule}from '@angular/common/http';
 
 
 @NgModule({
@@ -23,10 +23,11 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatSliderModule,
     NgbModule,
-    FormsModule 
+    FormsModule,
+    HttpClientModule
     
   ],
-  providers: [AuthService],
+  providers: [],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
 })

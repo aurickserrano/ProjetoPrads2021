@@ -10,14 +10,19 @@
 <div></div><br>
     <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 row d-flex justify-content-center"  align ="center">
         <form #membroForm="ngForm" (ngSubmit)="onSubmit(membroForm)">
-          <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="membroService.selectedMembro._id">
+          <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="membroService.selectedMembros._id">
             <div class="form-group">
               <label for="usuario">Usuario</label>
-              <input  type="text" class="form-control" name="name" #name="ngModel"[(ngModel)]="membroService.selectedMembros.usuario">
+              <input  type="text" class="form-control" name="usuario" #usuario="ngModel"[(ngModel)]="membroService.selectedMembros.usuario">
             </div>
             <div class="form-group">
               <label for="senha">Password</label>
-              <input  type="text" class="form-control" name="password" #password="ngModel"[(ngModel)]="membroService.selectedMembros.senha">            </div>
+              <input  type="text" class="form-control" name="senha" #senha="ngModel"[(ngModel)]="membroService.selectedMembros.senha">            
+            </div>
+            <div class="form-group">
+              <label for="senha">Posição</label>
+              <input  type="text" class="form-control" name="posicao" #posicao="ngModel"[(ngModel)]="membroService.selectedMembros.posicao">            
+            </div>
             <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
               <label class="form-check-label" for="exampleCheck1">Check me out</label>

@@ -1,5 +1,6 @@
 import { MembroService } from './../../shared/membros.service';
 import { Component, OnInit } from "@angular/core";
+import { NgForm } from '@angular/forms';
 
 
 
@@ -13,9 +14,26 @@ import { Component, OnInit } from "@angular/core";
  
 })
 export class LoginComponent implements OnInit {
-  constructor(private membroService:MembroService) { }
+  constructor(public membroService:MembroService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.resetForm();
+  }
+  resetForm(form?:NgForm) {
+    if(form)
+      form.reset();
+    this.membroService.selectedMembros = {
+      _id:"",
+      usuario:"",
+      senha:"",
+      posicao:"",
+    }
+  }
+  onSubmit(form:NgForm){
+    this.membroService.postMembro(form.value).subscribe((res)=>{
+      this.resetForm(form);
+    });
+
   }
 
 
